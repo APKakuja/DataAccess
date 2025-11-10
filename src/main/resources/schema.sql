@@ -4,5 +4,6 @@ CREATE TABLE customer (
   email VARCHAR(100),
   age INT,
   cicle VARCHAR(50),
-  year_value INT
+  year_value INT,
+  image_path VARCHAR(500) NULL
 );

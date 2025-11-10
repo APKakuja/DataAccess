@@ -16,6 +16,10 @@ public class CustomerRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    public void updateImagePath(Long userId, String imagePath) {
+
+    }
+
     // RowMapper para convertir ResultSet a Customer
     private static class CustomerRowMapper implements RowMapper<Customer> {
         @Override
@@ -41,13 +45,6 @@ public class CustomerRepository {
                 "cicle VARCHAR(50)," +
                 "year_val INT)"; // <-- usa year_val
         jdbcTemplate.execute(sql);
-    }
-
-    // Insertar datos de ejemplo
-    public void insertSampleData() {
-        String sql = "INSERT INTO customer (name, email, age, cicle, year_val) VALUES (?, ?, ?, ?, ?)";
-        jdbcTemplate.update(sql, "Adrian Kakuja", "adriankakujapetrisor@gmail.com", 26, "DAM", 2025);
-        jdbcTemplate.update(sql, "Pau García", "pau@example.com", 22, "ASIX", 2024);
     }
 
     // Listar todos
